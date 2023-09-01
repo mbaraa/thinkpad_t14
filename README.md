@@ -10,7 +10,8 @@ Lenovo is hating on Linux lately, that is some stuff are not working out of the 
 - Intel's `dmic_detct` is making Linux not able to see the audio card, so you're gonna need to disable it :)
 - Add this to `GRUB_CMDLINE_LINUX_DEFAULT` inside the file `/etc/default/grub`
   ```
-  snd_hda_intel.dmic_detect=0
+  # something like this
+  GRUB_CMDLINE_LINUX_DEFAULT="snd_hda_intel.dmic_detect=0"
   ```
 - Run `sudo grub-mkconfig -o /boot/grub/grub.cfg`
 - Reboot :)
@@ -19,7 +20,8 @@ Lenovo is hating on Linux lately, that is some stuff are not working out of the 
 - Well, this is a problem that has been in Linux since NVMes were invented, and fixing it is quiet easy
 - Add this to `GRUB_CMDLINE_LINUX` inside the file `/etc/default/grub`
   ```
-  nvme_core.default_ps_max_latency_us=0
+  # something like this
+  GRUB_CMDLINE_LINUX="nvme_core.default_ps_max_latency_us=0"
   ```
 - Run `sudo grub-mkconfig -o /boot/grub/grub.cfg`
 - Reboot :)
