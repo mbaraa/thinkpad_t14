@@ -1,0 +1,5 @@
+# Add this line to reduce NVMe failures, since latency is not matched by default between hardware and software!
+GRUB_CMDLINE_LINUX="nvme_core.default_ps_max_latency_us=0"
+
+# Add this line to enable audio...
+GRUB_CMDLINE_LINUX_DEFAULT="snd_hda_intel.dmic_detect=0"
